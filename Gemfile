@@ -4,6 +4,7 @@ gem 'rails', '3.0.8'
 gem 'jquery-rails'
 gem 'responders'
 gem 'devise'
+gem 'will_paginate', '3.0.pre'
 
 group :development, :test do
   gem "nifty-generators"
@@ -17,3 +18,4 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'launchy', '0.3.7'
 end
+
