@@ -1,9 +1,10 @@
 class QuestionsController < ApplicationController
-  
+
   before_filter :authenticate_user!, except: [:index, :show]
-  
+
   def index
-    @questions = Question.all
+    @questions = Question.paginate :page => params[:page], :per_page => 10, :order => "created_at desc"
+
     respond_with(@questions)
   end
 
@@ -39,3 +40,4 @@ class QuestionsController < ApplicationController
     respond_with(@question)
   end
 end
+
